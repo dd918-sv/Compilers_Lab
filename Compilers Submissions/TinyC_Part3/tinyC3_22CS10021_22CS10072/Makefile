@@ -1,0 +1,18 @@
+BASE1=TinyC3_22CS10021_22CS10072
+BASE2=TinyC3_22CS10021_22CS10072_translator
+
+all:
+	yacc -d $(BASE1).y
+	flex $(BASE1).l
+	g++ $(BASE2).cxx
+
+run:
+	./a.out<TinyC3_22CS10021_22CS10072_test1.c>TinyC3_22CS10021_22CS10072_quads1.out
+	./a.out<TinyC3_22CS10021_22CS10072_test2.c>TinyC3_22CS10021_22CS10072_quads2.out
+	./a.out<TinyC3_22CS10021_22CS10072_test3.c>TinyC3_22CS10021_22CS10072_quads3.out
+	./a.out<TinyC3_22CS10021_22CS10072_test4.c>TinyC3_22CS10021_22CS10072_quads4.out
+	./a.out<TinyC3_22CS10021_22CS10072_test5.c>TinyC3_22CS10021_22CS10072_quads5.out
+
+
+clean:
+	rm -f a.out y.tab.c lex.yy.c y.tab.h TinyC3_22CS10021_22CS10072_quads5.out TinyC3_22CS10021_22CS10072_quads4.out TinyC3_22CS10021_22CS10072_quads3.out TinyC3_22CS10021_22CS10072_quads2.out TinyC3_22CS10021_22CS10072_quads1.out
